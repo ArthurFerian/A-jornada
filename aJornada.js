@@ -166,8 +166,163 @@ if (poderMercenarios <= 0) {
 console.log("");
 console.log("🏁 FIM DO CAPÍTULO - Aguarde o próximo nível da aventura!");
 
+console.log("=== CONTINUAÇÃO DA SAGA ÉPICA - NÍVEL 3 ===");
+console.log("");
 
+    // Inventário mágico - primeira coleção arcana
+let inventario = ["Poção de Vida", "Katana Flamejante", "Armadura de Samurai"];
+let aliados = ["Date Masamune", "Kage no Ryu", "Arqueiro Das sombras"];
+let inimigosEncontrados = ["Kuro no Oni", "Yami Tatsu", "Dragão Menor"];
+let salasCastelo = ["Salão principal", "Passagem estreita e misteriosa", "Sala do Dragão de Ouro"];
+let tesouroColetado = ["Uma segunda Katana de Raio"];
 
+console.log("🏰 === " + nome + " ADENTRA O KINRYū-jō ===");
+console.log("Após as vitórias dos níveis anteriores, nosso herói chegou ao castelo lendário...");
+console.log("Inventário inicial: " + inventario.length + " itens");
 
+// === CAPÍTULO 1: DESCOBERTA DAS COLEÇÕES ARCANAS ===
+console.log("");
+console.log("🗝️ CAPÍTULO 1: Os Baús Empoeirados do Castelo");
+console.log("");
 
+let pocoesEncontradas = ["Cura Maior", "Força Titânica", "Invisibilidade"];
+let armadilhasAtiradas = ["Bomba de cerâmica incendiária", "Cercado de lanças"];
+console.log("");
 
+console.log("🧪 Primeira poção encontrada: " + pocoesEncontradas[0]);
+console.log("⚗️ Total de poções mágicas: " + pocoesEncontradas.length);
+console.log("");
+
+inventario[0] = "Poção de Vida Suprema";
+console.log("✨ " + nome + " aprimorou uma poção!");
+console.log("");
+
+inventario.push("Lança tripla usada para romper armaduras"); 
+console.log("💍 Novo item adicionado! Inventário: " + inventario);
+console.log("");
+
+let itemRemovido = inventario.pop(); 
+console.log("📤 Item removido: " + itemRemovido);
+console.log("🎒 Inventário atual: " + inventario);
+console.log("");
+
+// === CAPÍTULO 2: O RITUAL DA EXPLORAÇÃO ===
+console.log("");
+console.log("⚔️ CAPÍTULO 2: Explorando as Masmorras Sistemáticas");
+
+console.log("🗺️ Começando exploração das " + salasCastelo.length + " salas do castelo...");
+for (let i = 0; i < salasCastelo.length; i++) {
+console.log("🚪 Sala " + (i + 1) + ": " + salasCastelo[i]);
+console.log("");
+
+if (i === 0) {
+console.log("📚 " + nome + " encontra pergaminhos antigos!");
+experiencia += 50;
+} else if (i === 1) {
+console.log("💎 Cristais brilhantes concedem poder mágico!");
+tesouroColetado.push("Cristal de Poder");
+} else {
+console.log("⏰ O tempo distorce ao redor de " + nome + "!");
+vidaAtual -= 10; 
+}
+}
+
+console.log("📊 Exploração completa! XP: " + experiencia + " | Vida: " + vidaAtual);
+
+// === CAPÍTULO 3: A UNIÃO DOS ALIADOS ===
+console.log("");
+console.log("🤝 CAPÍTULO 3: Reunindo os Aliados Arcanos");
+console.log("");
+
+console.log("🏹 " + nome + " convoca seus aliados para a batalha final:");
+
+for (let i = 0; i < aliados.length; i++) {
+let aliado = aliados[i];
+console.log("⚡ Aliado " + (i + 1) + ": " + aliado + " se junta à missão!");
+
+if (i === 0) { // Primeiro aliado - Líder mágico
+console.log("🔮 Como líder mágico, " + aliado + " Luta com espadas!");
+ouro += 50;
+} else if (i === 1) { // Segundo aliado - Defensor
+console.log("🛡️ Como defensor principal, " + aliado + " fortalece a resistência!");
+vidaMaxima += 30;
+} else { // Demais aliados - Especialistas
+console.log("🏹 Como especialista, " + aliado + " Usa um arco magico!");
+experiencia += 40;
+}
+}
+
+console.log("🎖️ Equipe completa! Ouro: " + ouro + " | Vida máxima: " + vidaMaxima);
+console.log("");
+
+// === CAPÍTULO 4: A BATALHA FINAL DOS ARRAYS ===
+console.log("");
+console.log("🐉 CAPÍTULO 4: Confronto com as Criaturas do Castelo");
+console.log("");
+
+let inimigosBatalha = ["Oni", "Tengu", "Dragão de Ouro"];
+let danoRecebido = [1000];
+
+console.log("💀 " + nome + " enfrenta " + inimigosBatalha.length + " inimigos épicos!");
+
+for (let i = 0; i < inimigosBatalha.length; i++) {
+let inimigo = inimigosBatalha[i];
+let dano = Math.floor(Math.random() * 30) + 10; 
+
+console.log("⚔️ Rodada " + (i + 1) + " - Enfrentando: " + inimigo);
+console.log("💥 " + nome + " causa " + dano + " de dano!");
+
+danoRecebido.push(dano); 
+if (i === 0) {
+console.log("💎 Primeira vitória! Cristais fragmentados concedem bônus!");
+tesouroColetado.push("Fragmento de Cristal");
+} else if (i === 1) {
+console.log("🌑 Segunda batalha! As sombras drenam energia, mas " + nome + " resiste!");
+vidaAtual -= 15;
+} else {
+console.log("🔥 Batalha final! O dragão recua! Vitória épica alcançada!");
+experiencia += 100;
+tesouroColetado.push("Escama Dragônica");
+}
+}
+
+let danoTotal = 0;
+for (let i = 0; i < danoRecebido.length; i++) {
+danoTotal += danoRecebido[i];
+console.log("📊 Rodada " + (i + 1) + " - Dano: " + danoRecebido[i]);
+}
+
+console.log("⚡ Dano total causado: " + danoTotal);
+console.log("🏆 Tesouros coletados: " + tesouroColetado.length + " itens épicos!");
+
+console.log("");
+console.log("👑 === EPÍLOGO: " + nome + " - CONQUISTADOR DO CASTELO ===");
+
+// Estatísticas finais da jornada
+console.log("📈 Estatísticas Finais da Aventura:");
+console.log("• Nível alcançado: " + nivel);
+console.log("• Experiência total: " + experiencia);
+console.log("• Vida restante: " + vidaAtual + "/" + vidaMaxima);
+console.log("• Ouro acumulado: " + ouro);
+console.log("• Itens no inventário: " + inventario.length);
+console.log("• Aliados conquistados: " + aliados.length);
+console.log("• Tesouros épicos: " + tesouroColetado.length);
+
+// === ADICIONE SUAS 10+ LINHAS ÉPICAS DE CONTINUAÇÃO AQUI ===
+console.log("");
+console.log("🌟 A LENDA CONTINUA...");
+console.log("Após conquistar o Castelo, " + nome + " emergiu transformado.");
+console.log("O ódio ja tinha te dominado.");
+console.log("Cada batalha executada havia forjado sua mente que foi abalada quando criança.");
+console.log("As vozes sussurravam segredos ancestrais, revelando padrões ocultos da realidade.");
+console.log("Aliados admiravam sua capacidade de organizar caos em estruturas harmoniosas, mas mal sabe eles oque realmente passava pela cabeça dele.");
+console.log("O inventário repleto de artefatos antigos brilhava com poder recém-descoberto.");
+console.log("Mas no horizonte, novas aventuras aguardavam o incrivel " + classe + " " + nome + "  .");
+console.log("Rumores falavam de vilas que precisavam ser salvas.");
+console.log("E objetos legendários que guardariam os segredos da programação orientada.");
+console.log("A jornada estava longe do fim - era apenas o início de uma saga maior.");
+console.log("Pois " + nome + " havia provado ser digno do título supremo:");
+console.log("⚡ O SAMURAI SILENCIOSO ⚡");
+
+console.log("");
+console.log("🎯 FIM DO NÍVEL 3 | AGUARDE FUTURAS AVENTURAS NA ACADEMIA DOS CÓDIGOS! 🎯");
