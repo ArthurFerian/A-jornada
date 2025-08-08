@@ -326,3 +326,4 @@ console.log("⚡ O SAMURAI SILENCIOSO ⚡");
 
 console.log("");
 console.log("🎯 FIM DO NÍVEL 3 | AGUARDE FUTURAS AVENTURAS NA ACADEMIA DOS CÓDIGOS! 🎯");
+
