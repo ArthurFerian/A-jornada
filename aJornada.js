@@ -39,9 +39,9 @@ console.log("Quanto é a defesa total?", defesaTotal);
 let vidaSuficiente = vida > 70;
 let ataqueForte = ataqueTotal > 60;
 let nivelAvancado = nivel >= 10;
-let podeEnfrentarGuardiao = vidaSuficiente && (ataqueForte || nivelAvancado);
+let podeEnfrentarMercenarios = vidaSuficiente && (ataqueForte || nivelAvancado);
 
-console.log(`Você pode enfrentar o Guardião? ${podeEnfrentarGuardiao}`);
+console.log(`Você pode enfrentar um grupo de mercenarios? ${podeEnfrentarMercenarios}`);
 
 
 console.log("");
@@ -69,13 +69,14 @@ let manaAtual = 150;
 let manaMaxima = 500;
 let experiencia = 3000;
 let ouroAtual = 25;
-let poderMercenarios = 30;
+let poderMercenarios = 60;
 
 // Novos atributos para batalha
 let forca = 1000;
+
 let defesa = 500;
 let agilidade = 2000;
-let combatesVencidos = 0;
+let combatesVencidos = 4;
 
 // Estado atual da história (continue de onde parou no Nível 1)
 let localAtual = "Yamashiro ";
@@ -132,7 +133,7 @@ if (vidaAtual <= 30) {
     console.log("Ataque final com toda a força restante!");
     poderMercenarios -= (forca * 2);
 } else if (manaAtual >= 30 && classe === "Mago") {
-    console.log("✨ " + nomePersonagem + " canaliza todo seu poder mágico!");
+    console.log("✨ " + nome + " canaliza todo seu poder mágico!");
     console.log("Magia devastadora!");
     poderMercenarios -= (forca + 20);
     manaAtual -= 30;
@@ -146,12 +147,26 @@ if (vidaAtual <= 30) {
 }
 
 console.log("");
-console.log("📜 === CONTINUAÇÃO DA JORNADA DE " + nomePersonagem + " ===");
+console.log("📜 === CONTINUAÇÃO DA JORNADA DE " + nome + " ===");
 console.log("");
 
-console.log("Após as lutas do " + localAtual + ", nosso herói " + nomePersonagem);
+console.log("Após as lutas do " + localAtual + ", nosso herói " + nome);
 console.log("da classe " + classe + " se depara com um novo desafio...");
 console.log("");
+
+if (poderMercenarios <= 0) {
+    console.log("🎉 VITÓRIA ÉPICA! " + nome + " triunfa!");
+    experiencia += 100;
+    combatesVencidos++;
+    console.log("A lenda " + nome + " cresce...");
+} else {
+    console.log("⚔️ A batalha foi dura, mas " + nome + " consegue vencer os mercenarios e vingar sua família e sobreviver para lutar outro dia!");
+}
+
+console.log("");
+console.log("🏁 FIM DO CAPÍTULO - Aguarde o próximo nível da aventura!");
+
+
 
 
 
